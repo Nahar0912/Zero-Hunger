@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <div class="row">
+        <section class="col-md-7" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Zero Hunger</h2>
+            <p>
+                We are an NGO who works for feeding deprived people and children. We have observed that, people are wasting a ton of food every day in Dhaka city (like office programs, buffets etc etc). We are on a mission to make the usage of this foods. We have contacted with some restaurants, and they agreed to give us those foods before it gets rotten, or they will preserve those foods till we collect from them.
+            </p>
+            @Html.ActionLink("SignUp", "Create", "Home", new { @class = "btn btn-success" })
+            @Html.ActionLink("Login", "UserLogin", "Home", new { @class = "btn btn-success" })
+        </section>
+    </div>
+</main>

@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "UserLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+<div>
+    Please Select your user Type:<br>
+    @Html.ActionLink("Restaurant", "RestLogin", "Restaurant")<br><br>
+    @Html.ActionLink("Employee", "EmpLogin", "Employee")<br><br>
+    @Html.ActionLink("Admin", "AdminLogin", "Admin")
+</div>

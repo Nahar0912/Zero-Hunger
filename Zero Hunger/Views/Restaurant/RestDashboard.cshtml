@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Zero_Hunger.EF.NGOSystem>
+
+@{
+    ViewBag.Title = "RestDashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RestDashboard</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateRequest")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodCollectionTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.E_Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodCollectionTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.E_Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

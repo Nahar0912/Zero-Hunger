@@ -11,9 +11,6 @@ namespace Zero_Hunger.DTO
     {
         public int Id { get; set; }
         [Required]
-        [RegularExpression("^[a-zA-Z ]{1,20}$", ErrorMessage = "Name can contain only alphabets with maximum length 20")]
-        public string Name { get; set; }
-        [Required]
         [RegularExpression("^(?=.{1,64}$)[a-z][a-z0-9.-]*[a-z0-9]@[a-z]{2,}(?:\\.[a-z0-9]+)*\\.[a-z]{2,}$", ErrorMessage = "Invalid Email Format")]
         public string Email { get; set; }
         [Required]

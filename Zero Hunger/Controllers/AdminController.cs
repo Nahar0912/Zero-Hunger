@@ -60,12 +60,14 @@ namespace Zero_Hunger.Controllers
             var exdata = db.NGOSystems.Find(d.Id);
             exdata.R_Name = d.R_Name;
             exdata.R_Address = d.R_Address;
+            exdata.FoodItem = d.FoodItem;
             exdata.FoodCollectionTime = d.FoodCollectionTime;
             exdata.R_Status = d.R_Status;
+            exdata.Approval = d.Approval;
             exdata.E_Status = d.E_Status;
 
             db.SaveChanges();
-            return RedirectToAction("RestDashboard");
+            return RedirectToAction("AdminDashboard");
         }
 
         public ActionResult Delete(int id)
@@ -74,7 +76,7 @@ namespace Zero_Hunger.Controllers
             var exdata = db.NGOSystems.Find(id);
             db.NGOSystems.Remove(exdata);
             db.SaveChanges();
-            return RedirectToAction("RestDashboard");
+            return RedirectToAction("AdminDashboard");
         }
     }
 }

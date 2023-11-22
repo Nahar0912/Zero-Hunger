@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="288d9fa437e941368644773606995ce3" Name="Diagram1">
-        <EntityTypeShape EntityType="ZeroHungerModel.Admin" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+      <Diagram DiagramId="6c572ab421534f98ab83a285cf693e7f" Name="Diagram1">
+        <EntityTypeShape EntityType="ZeroHungerModel.Admin" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="ZeroHungerModel.Employee" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ZeroHungerModel.NGOSystem" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ZeroHungerModel.Restuarant" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZeroHungerModel.Restuarant" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="ZeroHungerModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ZeroHungerModel.UserInfo" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="ZeroHungerModel.FK_NGOSystem_Admin" ManuallyRouted="false" />

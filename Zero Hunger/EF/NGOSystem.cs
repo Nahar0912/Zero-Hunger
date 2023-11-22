@@ -17,8 +17,10 @@ namespace Zero_Hunger.EF
         public int Id { get; set; }
         public string R_Name { get; set; }
         public string R_Address { get; set; }
+        public string FoodItem { get; set; }
         public string FoodCollectionTime { get; set; }
         public string R_Status { get; set; }
+        public string Approval { get; set; }
         public string E_Status { get; set; }
         public Nullable<int> A_id { get; set; }
         public Nullable<int> R_id { get; set; }

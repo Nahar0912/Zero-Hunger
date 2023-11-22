@@ -76,6 +76,7 @@ namespace Zero_Hunger.Controllers
             var exdata = db.NGOSystems.Find(d.Id);
             exdata.R_Name = d.R_Name;
             exdata.R_Address = d.R_Address;
+            exdata.FoodItem = d.FoodItem;
             exdata.FoodCollectionTime = d.FoodCollectionTime;
             exdata.R_Status = d.R_Status;
            

@@ -14,7 +14,7 @@ namespace Zero_Hunger.Controllers
         {
             return View();
         }
-
+        
         public ActionResult UserLogin()
         {
             return View();
@@ -26,7 +26,7 @@ namespace Zero_Hunger.Controllers
             var data = db.UserInfoes.ToList();
             return View(data);
         }
-        
+      
         public ActionResult Create()
         {
             return View();

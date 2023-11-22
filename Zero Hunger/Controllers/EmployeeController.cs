@@ -11,11 +11,8 @@ namespace Zero_Hunger.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
-        public ActionResult Index()
-        {
-            return View();
-        }
 
+        [HttpGet]
         public ActionResult EmpLogin()
         {
             return View();
@@ -25,7 +22,7 @@ namespace Zero_Hunger.Controllers
         {
             var db = new ZeroHungerEntities();
             var user = (from d in db.UserInfoes
-                        where d.Email == e.Email && d.Password == e.Password
+                        where d.Email == e.Email && d.Password == e.Password && string.Equals(d.UserType, "Employee")
                         select d).SingleOrDefault();
             if (user != null)
             {
@@ -33,7 +30,7 @@ namespace Zero_Hunger.Controllers
             }
             else
             {
-                ModelState.AddModelError("Email", "Invalid user");
+                TempData["Msg"] = "Username or Passwordd or Usertype Invalide";
             }
             return View();
         }
@@ -59,10 +56,8 @@ namespace Zero_Hunger.Controllers
         {
             var db = new ZeroHungerEntities();
             var exdata = db.NGOSystems.Find(d.Id);
-            exdata.R_Name = d.R_Name;
-            exdata.R_Address = d.R_Address;
-            exdata.FoodCollectionTime = d.FoodCollectionTime;
-            exdata.R_Status = d.R_Status;
+            exdata.E_Status = d.E_Status;
+           
 
             db.SaveChanges();
             return RedirectToAction("EmpDashboard");

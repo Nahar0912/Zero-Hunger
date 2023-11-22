@@ -13,11 +13,8 @@ namespace Zero_Hunger.Controllers
     public class RestaurantController : Controller
     {
         // GET: Restaurant
-        public ActionResult Index()
-        {
-            return View();
-        }
-       
+
+        [HttpGet]
         public ActionResult RestLogin()
         {
             return View();
@@ -27,8 +24,8 @@ namespace Zero_Hunger.Controllers
         {
             var db = new ZeroHungerEntities();
             var user = (from d in db.UserInfoes
-                      where d.Email == r.Email && d.Password == r.Password 
-                      select d).SingleOrDefault();
+                      where d.Email == r.Email && d.Password == r.Password && string.Equals(d.UserType, "Restaurant")
+                        select d).SingleOrDefault();
             if (user!=null)
             {
                
@@ -36,7 +33,7 @@ namespace Zero_Hunger.Controllers
             }
             else
             {
-                TempData["Msg"] = "Username or Passwordd Invalide";
+                TempData["Msg"] = "Username or Passwordd or Usertype Invalide";
             }
             return View();
         }
@@ -48,6 +45,7 @@ namespace Zero_Hunger.Controllers
             return View(data);
         }
 
+        [HttpGet]
         public ActionResult RestCreateRequest()
         {
             return View();

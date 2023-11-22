@@ -10,11 +10,8 @@ namespace Zero_Hunger.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        public ActionResult Index()
-        {
-            return View();
-        }
 
+        [HttpGet]
         public ActionResult AdminLogin()
         {
             return View();
@@ -24,17 +21,17 @@ namespace Zero_Hunger.Controllers
         {
             var db = new ZeroHungerEntities();
             var user = (from d in db.UserInfoes
-                        where d.Email == a.Email && d.Password == a.Password
+                        where d.Email == a.Email && d.Password == a.Password && string.Equals(d.UserType, "Admin")
                         select d).SingleOrDefault();
             if (user != null)
             {
-                //db.Restuarants.Add(a);
-                //db.SaveChanges();
+                db.Admins.Add(a);
+                db.SaveChanges();
                 return RedirectToAction("AdminDashboard");
             }
             else
             {
-                TempData["Msg"] = "Username or Passwordd Invalide";
+                TempData["Msg"] = "Username or Passwordd or Usertype Invalide";
             }
             return View();
         }
@@ -65,6 +62,7 @@ namespace Zero_Hunger.Controllers
             exdata.R_Address = d.R_Address;
             exdata.FoodCollectionTime = d.FoodCollectionTime;
             exdata.R_Status = d.R_Status;
+            exdata.E_Status = d.E_Status;
 
             db.SaveChanges();
             return RedirectToAction("RestDashboard");
